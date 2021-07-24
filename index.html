@@ -9,10 +9,17 @@
   <body>
     <h1>Blackjack</h1>
     <p id="message-el">Want to play a round?</p>
-    <p id="cards-el">Cards:</p>
-    <p id="sum-el">Sum:</p>
+    <p id="cards-el">Player Cards:</p>
+    <p id="sum-el">Player Sum:</p>
+    <p id="house-cards-el">House Cards:</p>
+    <p id="house-sum-el">House Sum:</p>
+
     <button onclick="startGame()">START GAME</button>
-    <button onclick="newCard()">NEW CARD</button>
+    <div>
+      <button onclick="newCard()">NEW CARD</button>
+      <button onclick="hold()">STAY</button>
+    </div>
+
     <p id="player-el"></p>
     <script src="index.js"></script>
   </body>
