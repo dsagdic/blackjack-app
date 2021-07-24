@@ -9,7 +9,6 @@ let playerCards = [];
 let playerSum = 0;
 let houseCards = [];
 let houseSum = 0;
-let hasBlackJack = false;
 let isAlive = false;
 let message = '';
 const messageEl = document.getElementById('message-el');
@@ -48,7 +47,7 @@ function renderGame() {
     message = "You've got Blackjack!";
     player.chips += 150;
     playerEl.textContent = `${player.name}: $${player.chips}`;
-    hasBlackJack = true;
+    isAlive = false;
   } else {
     message = "BUST: You're out of the game!";
     isAlive = false;
@@ -77,7 +76,7 @@ function startGame() {
 
 // eslint-disable-next-line
 function newCard() {
-  if (isAlive && !hasBlackJack) {
+  if (isAlive) {
     const card = getRandomCard();
     playerSum += card;
     playerCards.push(card);
@@ -87,14 +86,14 @@ function newCard() {
 
 // eslint-disable-next-line
 function hold() {
-  if (isAlive && !hasBlackJack) {
+  if (isAlive) {
     houseCardsEl.textContent = 'House Cards: ';
     houseSumEl.textContent = `House Sum: ${houseSum}`;
     for (let i = 0; i < houseCards.length; i += 1) {
       houseCardsEl.textContent += `${houseCards[i]} `;
     }
 
-    if (houseSum < 17 && houseSum < playerSum) {
+    if (houseSum < 17 && houseSum <= playerSum) {
       const card = getRandomCard();
       houseSum += card;
       houseCards.push(card);
