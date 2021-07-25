@@ -17,11 +17,8 @@ https://blackjack-app-dsagdic.netlify.app/
 ## Known Bugs
 
 - Since Aces count as only 11 points instead of player's choice(11 points or 1 point), getting two aces at the start of the game counts as a bust and players lose that round.
+- Player's balance can go below zero. I choose not to fix this and leave it as is since the nature of gambling is "high risk, high reward.".
   
-## Authors
-
-- [@dsagdic](https://www.github.com/dsagdic)
-
   
 ## Acknowledgements
 
