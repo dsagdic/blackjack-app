@@ -27,3 +27,13 @@ button {
   border-radius: 2px;
   margin: 5px;
 }
+
+button:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  transition-duration: 0.7s;
+}
+
+button:active {
+  transform: translateY(5px);
+}
